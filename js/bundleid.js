@@ -323,7 +323,7 @@ const bundleidjbdata = [
   {
     name_app: "Cydia",
     name_bundle: "com.saurik.Cydia-large",
-    icon: "../img/icon_utilities/cydia.png"
+    icon: "../img/icon_utilities/Cydia.png"
   },
   {
     name_app: "checkra1n",
@@ -393,7 +393,7 @@ const bundleidjbdata = [
   {
     name_app: "Sileo",
     name_bundle: "corg.coolstar.SileoStore-large",
-    icon: "../img/icon_utilities/Sileo.png"
+    icon: "../img/icon_utilities/sileo.png"
   },
   {
     name_app: "Snowboard",
