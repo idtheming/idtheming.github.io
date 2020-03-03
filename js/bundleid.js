@@ -1296,7 +1296,7 @@ document.getElementById("bundleidstock").innerHTML = `
 		  <div class="bundle-name">
 			<img class="bundle-icon" src="${bdid.icon}">
 			<h2>${bdid.name_app}</h2>
-			<h4 class="bundle-id" readonly="">${bdid.name_bundle}</h4>
+			<h4 class="bundle-id">${bdid.name_bundle}</h4>
 		  </div>
 	  `
   }).join('')} <h1 class="bundle-title">End Stock BundlesID iOS</h1><hr>
@@ -1311,7 +1311,7 @@ document.getElementById("bundleidjb").innerHTML = `
 		  <div class="bundle-name">
 			<img class="bundle-icon" src="${bdid.icon}">
 			<h2>${bdid.name_app}</h2>
-			<h4 class="bundle-id" readonly="">${bdid.name_bundle}</h4>
+			<h4 class="bundle-id">${bdid.name_bundle}</h4>
 		  </div>
 	  `
   }).join('')} <h1 class="bundle-title">End Apps JB BundlesID iOS</h1><hr>
@@ -1326,7 +1326,7 @@ document.getElementById("bundleiduser").innerHTML = `
 		  <div class="bundle-name">
 			<img class="bundle-icon" src="${bdid.icon}">
 			<h2>${bdid.name_app}</h2>
-			<h4 class="bundle-id" readonly="">${bdid.name_bundle}</h4>
+			<h4 class="bundle-id">${bdid.name_bundle}</h4>
 		  </div>
 	  `
   }).join('')} <h1 class="bundle-title">End Apps User BundlesID iOS</h1><hr>
