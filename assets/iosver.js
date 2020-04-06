@@ -90,14 +90,12 @@ const VERSION_CHECK_UNSUPPORTED = "Chỉ tương thích với iOS %s to %s &#x1f
 		message = VERSION_CHECK_SUPPORTED,
 		isBad = false;
 
-	if (compareVersions(minVersion, osVersion) == 1) {
-		message = VERSION_CHECK_NEEDS_UPGRADE.replace("%s", minString);
+	if (compareVersions(minVersion, osVersion) == 1) || (maxVersion && compareVersions(maxVersion, osVersion) == -1) {
+		message = VERSION_CHECK_UNSUPPORTED,
 		isBad = true;
-	} else if (maxVersion && compareVersions(maxVersion, osVersion) == -1) {
-		if ("unsupported" in prerequisite.dataset) {
-			message = VERSION_CHECK_UNSUPPORTED.replace("%s", minString).replace("%s", maxString);
-		} else {
-			message = VERSION_CHECK_UNCONFIRMED.replace("%s", osString);
+		} 
+	else {
+			message = VERSION_CHECK_UNSUPPORTED,
 		}
 
 		isBad = true;
