@@ -35,10 +35,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-const VERSION_CHECK_SUPPORTED = "Phiên bản iOS của bạn được hỗ trợ! &#x1f60a;";
-const VERSION_CHECK_NEEDS_UPGRADE = "Yêu cầu iOS %s &#x1f615;";
-const VERSION_CHECK_UNCONFIRMED = "Chưa thử nghiệm trên iOS %s &#x1f601;";
-const VERSION_CHECK_UNSUPPORTED = "Chỉ tương thích với iOS %s to %s &#x1f61e;";
+const VERSION_CHECK_SUPPORTED = "Your iOS version is supported! &#x1f60a;";
+const VERSION_CHECK_NEEDS_UPGRADE = "Requires at least iOS %s &#x1f615;";
+const VERSION_CHECK_UNCONFIRMED = "Not yet tested on iOS %s &#x1f601;";
+const VERSION_CHECK_UNSUPPORTED = "Only compatible with iOS %s to %s &#x1f61e;";
 
 (function(document) {
 	"use strict";
