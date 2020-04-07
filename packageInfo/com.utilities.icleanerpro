@@ -1,0 +1,8 @@
+{
+	"name": "iCleaner Pro",
+	"version": "7.8.1~beta2",
+	"description": "&#8226; Trình dọn dẹp và tối ưu hóa hệ thống iOS.",
+	"compatitle": "iOS 4.0-13.x.x",
+	"screenshot": "<img src='https://imod668.github.io/depictions/com.utilities.icleanerpro/1.jpg'/><img src='https://imod668.github.io/depictions/com.utilities.icleanerpro/2.jpg'/><img src='https://imod668.github.io/depictions/com.utilities.icleanerpro/3.jpg'/>",
+	"changelog": "&#8226; Fix multiple reported crashes for version 7.8.1~beta1.<br>&#8226; Shorten abnormally long respring times on some jailbreaks.",
+}
