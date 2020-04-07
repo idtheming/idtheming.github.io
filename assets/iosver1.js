@@ -1,10 +1,3 @@
-/*
-most of the code here is writen by Timon Olsthoorn
-Follow him on -
-Github 	- https://github.com/tmnlsthrn
-Twitter - @TimonOlsthoorn
-*/
-
 /* Lotus - iosver.js
  * Copyright (C) 2014-2015  Timon Olsthoorn (tmnlsthrn)
  */
@@ -42,26 +35,17 @@ Twitter - @TimonOlsthoorn
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-// Adapted from https://github.com/tmnlsthrn/Lotus/blob/master/js/iosver.js
+const VERSION_CHECK_SUPPORTED = "Phiên bản iOS của bạn được hỗ trợ! &#x1f60a;";
+const VERSION_CHECK_NEEDS_UPGRADE = "Yêu cầu iOS %s &#x1f615;";
+const VERSION_CHECK_UNCONFIRMED = "Chưa thử nghiệm trên iOS %s &#x1f601;";
+const VERSION_CHECK_UNSUPPORTED = "Chỉ tương thích với iOS %s to %s &#x1f61e;";
 
-
-// changed const to var for IE9/10 compatibity.
-var VERSION_CHECK_SUPPORTED = "Your iOS version is supported! &#x1f60a;";
-var VERSION_CHECK_NEEDS_UPGRADE = "Requires at least iOS %s &#x1f615;";
-var VERSION_CHECK_UNCONFIRMED = "Not yet tested on iOS %s &#x1f601;";
-var VERSION_CHECK_UNSUPPORTED = "Only compatible with iOS %s to %s &#x1f61e;";
-
-function ios_version_check(minIOS,maxIOS,otherIOS,callBack) {
+(function(document) {
 	"use strict";
-
 
 	function parseVersionString(version) {
 		var bits = version.split(".");
-		return [
-				parseInt(bits[0], 10),
-				parseInt(bits[1] ? bits[1] : 0, 10),
-				parseInt(bits[2] ? bits[2] : 0, 10)
-			   ];
+		return [ bits[0], bits[1] ? bits[1] : 0, bits[2] ? bits[2] : 0 ];
 	}
 
 	function compareVersions(one, two) {
@@ -86,22 +70,19 @@ function ios_version_check(minIOS,maxIOS,otherIOS,callBack) {
 
 		return 0;
 	}
-	
+
 	var prerequisite = document.querySelector(".prerequisite"),
-	var version = navigator.appVersion.match(/CPU( iPhone)? OS (\d+)_(\d+)(_(\d+))? like/i);
+		version = navigator.appVersion.match(/CPU( iPhone)? OS (\d+)_(\d+)(_(\d+))? like/i);
+
 	if (!prerequisite || !version) {
-		return 0;
+		return;
 	}
 
-	var osVersion = [
-						parseInt(version[2], 10),
-						parseInt(version[3], 10),
-						parseInt(version[4] ? version[5] : 0, 10)
-					],
+	var osVersion = [ version[2], version[3], version[4] ? version[5] : 0 ],
 
 		osString = osVersion[0] + "." + osVersion[1] + (osVersion[2] && osVersion[2] != 0 ? "." + osVersion[2] : ""),
-		minString = prerequisite.dataset.minIOS,
-		maxString = prerequisite.dataset.maxIOS,
+		minString = prerequisite.dataset.minIos,
+		maxString = prerequisite.dataset.maxIos,
 
 		minVersion = parseVersionString(minString),
 		maxVersion = maxString ? parseVersionString(maxString) : null,
@@ -109,19 +90,21 @@ function ios_version_check(minIOS,maxIOS,otherIOS,callBack) {
 		message = VERSION_CHECK_SUPPORTED,
 		isBad = false;
 
-	if (compareVersions(minVersion, osVersion) == 1) {
-		message = VERSION_CHECK_NEEDS_UPGRADE.replace("%s", minString);
+	if (compareVersions(minVersion, osVersion) == 1) || (maxVersion && compareVersions(maxVersion, osVersion) == -1) {
+		message = VERSION_CHECK_UNSUPPORTED,
 		isBad = true;
-	} else if (maxVersion && compareVersions(maxVersion, osVersion) == -1) {
-		if ("unsupported" == otherIOS) {
-			message = VERSION_CHECK_UNSUPPORTED.replace("%s", minString).replace("%s", maxString);
-		} else {
-			message = VERSION_CHECK_UNCONFIRMED.replace("%s", osString);
+		} 
+	else {
+			message = VERSION_CHECK_UNSUPPORTED,
 		}
 
 		isBad = true;
 	}
-	callBack(message,isBad);
 
-	return (isBad?-1:1);
-}
+//	prerequisite.querySelector("p").textContent = message;
+    prerequisite.querySelector("p").innerHTML = message;
+
+	if (isBad) {
+		prerequisite.classList.add("info");
+	}
+})(document);

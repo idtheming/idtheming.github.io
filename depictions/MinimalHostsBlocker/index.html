@@ -11,9 +11,17 @@
 <body>
 <panel>
 
-<fieldset class="iosver">
+<!--<fieldset class="iosver">
     <div data-min-ios="10.0" data-max-ios="10.3.3" class="prerequisite"><p>Your iOS version is supported! ^_^</p></div>
+</fieldset>-->
+
+<fieldset class="iosver" id="compatibility">
+<div class="prerequisite">
+<p id="minVersion" hidden>10</p>
+<p id="maxVersion" hidden>10.3.3</p>
+</div>
 </fieldset>
+
 
 <label>Description</label>
 <fieldset>
@@ -41,6 +49,6 @@
 <fieldset>
         <div><div><label><p>Please do not ask about blocking ads in apps or tweaks whose ads can be removed for a fee.</p></label></div></div></a>
 
-<script src="https://idtheming.github.io/assets/ios_version_check.js" async=""></script>
+<script src="https://idtheming.github.io/assets/iosver.js" async=""></script>
 
 </panel></body></html>
