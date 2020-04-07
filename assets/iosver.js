@@ -1,7 +1,7 @@
 //Thank you Matchstic, you beautiful person
-const VERSION_CHECK_SUPPORTED = "<p>iOS %s is supported. ✓</p>";
-const VERSION_CHECK_UNSUPPORTED = "<p>iOS %s is not supported. ✕</p>";
-const VERSION_CHECK_UNCONFIRMED = "<p>iOS %s has not been tested!</p>";
+const VERSION_CHECK_SUPPORTED = "<p>iOS của bạn hỗ trợ.✓</p>";
+const VERSION_CHECK_UNSUPPORTED = "<p>iOS của bạn không hỗ trợ.✕</p>";
+const VERSION_CHECK_UNCONFIRMED = "<p>iOS của bạn chưa kiểm tra.!</p>";
 
 function iOSversion() {
 	if (/iP(hone|od|ad)/.test(navigator.platform)) {
