@@ -20,14 +20,14 @@ var versionNumber = parseFloat(version[0] + "." + version[1]);
 
 	if(versionNumber >= minVersion && version <= maxVersion) {
 		document.getElementById('compatibility').innerHTML=VERSION_CHECK_SUPPORTED.replace("%s", versionNumber);
-		document.body.style.setProperty("--title-color", "rgba(39,174,96, 0.5)");
+		document.getElementById('compatibility').style.color = "#15d650";
 	} else if(versionNumber > maxVersion) {
 		document.getElementById('compatibility').innerHTML=VERSION_CHECK_UNCONFIRMED.replace("%s", versionNumber);
-		document.body.style.setProperty("--title-color", "rgba(192,57,43, 0.5)");
+		document.getElementById('compatibility').style.color = "#d68015";
 	} else if(!versionNumber) {
 		document.getElementById('compatibility').innerHTML="<p class='osver'>Can't get device version.</p>";
-		document.getElementByClassName('osver').style.color = "red";
+		document.getElementById('compatibility').style.color = "#9e10f7";
 	} else {
 		document.getElementById('compatibility').innerHTML=VERSION_CHECK_UNSUPPORTED.replace("%s", versionNumber);
-		document.body.style.setProperty("--title-color", "rgba(192,57,43, 0.5)");
+		document.getElementById('compatibility').style.color = "red";
 	}
