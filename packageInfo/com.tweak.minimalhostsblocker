@@ -3,8 +3,8 @@
 	"version": "1.0.1",
 	"description": "&#8226; A minimal adblocker for iOS.",
 	"compatitle": "iOS 11.0-13.x",
-	"minVersion": "11.0",
-	"maxVersion": "12.4",
+	"minVersion": "11",
+	"maxVersion": "12.4.1",
 	"screenshot": "<img src='https://wallpaperaccess.com/full/1953205.jpg'/><img src='https://i.pinimg.com/originals/40/39/e2/4039e24e43d2f0b8939e3b18fa696ce5.jpg'/>",
 	"changelog": "&#8226; Please do not ask about blocking ads.",
 }
