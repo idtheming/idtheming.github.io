@@ -42,12 +42,12 @@ function loadPackageInfo() {
 			}
 			//minmax os
 			if(decodeResp.minVersion) {
-				$("#minVersion").html(decodeResp.minVersion);
+				var minVersion = $("#minVersion").html(decodeResp.minVersion);
 				//$("#minVersion_").show();
 				
 			}
 			if(decodeResp.maxVersion) {
-				$("#maxVersion").html(decodeResp.maxVersion);
+				var maxVersion = $("#maxVersion").html(decodeResp.maxVersion);
 				//$("#maxVersion_").show();
 				
 			}
@@ -88,8 +88,7 @@ function iOSversion() {
 
 //var maxVersion = document.getElementById('maxVersion').innerHTML;
 //var minVersion = document.getElementById('minVersion').innerHTML;
-var maxVersion = (decodeResp.maxVersion);
-var minVersion = (decodeResp.minVersion);
+
 var version = iOSversion();
 var versionNumber = parseFloat(version[0] + "." + version[1]);
 
