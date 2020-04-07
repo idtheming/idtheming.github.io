@@ -1,8 +1,0 @@
-{
-	"name": "HomePlus Beta",
-	"version": "0.4.9",
-	"description": "&#8226; Thay đổi bố cục layout Homescreen! Tương tự Boxy và cuboid.",
-	"compatitle": "iOS 11.0-13.x",
-	"screenshot": "<img src='https://imod668.github.io/depictions/com.tweak.homeplus/1.jpg'/><img src='https://imod668.github.io/depictions/com.tweak.homeplus/2.jpg'/>",
-	"changelog": "&#8226; Fix FloatyDock Keyboard Issue.<br>&#8226; Fix other weird keyboard issues.<br>&#8226; Fix Giant Icon Bug.",
-}

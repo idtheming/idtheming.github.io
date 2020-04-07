@@ -25,7 +25,7 @@ var versionNumber = parseFloat(version[0] + "." + version[1]);
 		document.getElementById('compatibility').innerHTML=VERSION_CHECK_UNCONFIRMED.replace("%s", versionNumber);
 		document.getElementById('compatibility').style.color = "#d16cea";
 	} else if(!versionNumber) {
-		document.getElementById('compatibility').innerHTML="<p>Can't get device version.&#x1f601;;</p>";
+		document.getElementById('compatibility').innerHTML="<p>Can't get device version. &#x1f601;</p>";
 		document.getElementById('compatibility').style.color = "#e8b87c";
 	} else {
 		document.getElementById('compatibility').innerHTML=VERSION_CHECK_UNSUPPORTED.replace("%s", versionNumber);

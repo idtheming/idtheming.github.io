@@ -1,10 +1,3 @@
-function iOSVersion() {
-	var match = (navigator.appVersion).split('OS ');
-	if (match.length > 1) {
-		return match[1].split(' ')[0].split('_').join('.');
-	}
-	return false;
-}
 
 function loadPackageInfo() {
 	var urlSelfParts = window.location.href.split('description.html?id=');
@@ -47,6 +40,17 @@ function loadPackageInfo() {
 					$(".cur_ios").html("Current iOS: "+ios_ver);
 				}*/
 			}
+			//minmax os
+			if(decodeResp.minVersion) {
+				$("#minVersion").html(decodeResp.minVersion);
+				$("#minmax_").show();
+			}
+			if(decodeResp.maxVersion) {
+				$("#maxVersion").html(decodeResp.maxVersion);
+				$("#minmax_").show();
+			}
+			//minmax os
+			
 			if(decodeResp.changelog) {
 				$("#changelog").html(decodeResp.changelog);
 				$("#changelog_").show();
@@ -61,7 +65,7 @@ function loadPackageInfo() {
 			
         },
 		error: function (err) {
-			$("#errorInfo").html("Description "+urlSelfParts[1]);
+			$("#errorInfo").html("Description unavailable for "+urlSelfParts[1]);
 		}
 	});
 }
