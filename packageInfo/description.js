@@ -43,11 +43,11 @@ function loadPackageInfo() {
 			//minmax os
 			if(decodeResp.minVersion) {
 				$("#minVersion").html(decodeResp.minVersion);
-				$("#minVersion_").show();
+				//$("#minVersion_").show();
 			}
 			if(decodeResp.maxVersion) {
 				$("#maxVersion").html(decodeResp.maxVersion);
-				$("#maxVersion_").show();
+				//$("#maxVersion_").show();
 			}
 			//minmax os
 			
