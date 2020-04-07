@@ -25,8 +25,8 @@ var versionNumber = parseFloat(version[0] + "." + version[1]);
 		document.getElementById('compatibility').innerHTML=VERSION_CHECK_UNCONFIRMED.replace("%s", versionNumber);
 		document.body.style.setProperty("--title-color", "rgba(192,57,43, 0.5)");
 	} else if(!versionNumber) {
-		document.getElementById('compatibility').innerHTML="<p>Can't get device version.</p>";
-		document.body.style.setProperty("--title-color", "rgba(192,57,43, 0.5)");
+		document.getElementById('compatibility').innerHTML="<p class='osver'>Can't get device version.</p>";
+		document.getElementByClassName('osver').style.color = "red";
 	} else {
 		document.getElementById('compatibility').innerHTML=VERSION_CHECK_UNSUPPORTED.replace("%s", versionNumber);
 		document.body.style.setProperty("--title-color", "rgba(192,57,43, 0.5)");
