@@ -1,10 +1,10 @@
-function iOSVersion() {
+/*function iOSVersion() {
 	var match = (navigator.appVersion).split('OS ');
 	if (match.length > 1) {
 		return match[1].split(' ')[0].split('_').join('.');
 	}
 	return false;
-}
+}*/
 
 function loadPackageInfo() {
 	var urlSelfParts = window.location.href.split('description.html?id=');
@@ -42,10 +42,10 @@ function loadPackageInfo() {
 			if(decodeResp.compatitle) {
 				$("#compatitle_").show();
 				$("#compatitle").html(decodeResp.compatitle);
-				var ios_ver = iOSVersion();
+				/*var ios_ver = iOSVersion();
 				if(ios_ver) {
 					$(".cur_ios").html("iOS của bạn là: "+ios_ver);
-				}
+				}*/
 			}
 			if(decodeResp.changelog) {
 				$("#changelog").html(decodeResp.changelog);
